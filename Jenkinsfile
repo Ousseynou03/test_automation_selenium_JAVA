@@ -5,8 +5,7 @@ pipeline {
         stage('Clean') {
             steps {
                 echo 'Building..'
-               // sh "mvn clean -Dbrowser=chrome"
-               sh "mvn clean"
+                sh "mvn clean -Dbrowser=chrome"
             }
         }
         stage('Build') {
@@ -15,7 +14,7 @@ pipeline {
                 sh "mvn clean -X -Dbrowser=chrome"
             }
         }
-       /* stage('Test') {
+        stage('Test') {
             steps {
                 echo 'Testing..'
                 sh "mvn clean install test -Dbrowser=chrome"
@@ -27,6 +26,5 @@ pipeline {
                 sh "mvn clean package -Dbrowser=chrome"
             }
         }
-        */
     }
 }
